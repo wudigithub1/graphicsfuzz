@@ -70,7 +70,9 @@ matrix:
         - export PYTHON_GF="python3.5"
         - jdk_switcher use openjdk8 && build/travis/travis-release-android-related.sh
 
-
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
+  
 # Docker build. Not currently needed but can be useful as it is faster than installing many
 # packages.
 #    - os: linux
